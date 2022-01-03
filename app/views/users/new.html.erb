@@ -1,0 +1,36 @@
+<html>
+<head>
+<body>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+body{
+background-image: url('/assets/fbg.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
+div{
+    text-align: center;
+    }
+.container{
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+</style>
+
+<div class="container">
+
+<h1 style="color:red;">New User</h1>
+
+<%= render 'form', user: @user %>
+
+<%= link_to 'Back |', users_path %>
+<%= link_to "Login ", controller: "home", action: 'index', class: "back-link"  %>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAILWAY RESERVATION SYSTEM | Payment for AC-Coach</title>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type ="text/css" href="{% static 'css/mystyle.css' %}">
+
+  <!--datatable cdn start-->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+<script>
+ $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+</script>
+<!-- datatable cdn end-->
+</head>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+<a class="navbar-brand" href="#">RAILWAY RESERVATION SYSTEM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+<span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="myMenu">
+        <ul class="navbar-nav text-center ml-auto">
+            <li class="nav-item"><a class="nav-link" href="../sessions/welcome"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../about/aboutus"><i class="fas fa-address-card"></i> About</a></li>
+            <li class="nav-item"><a class="nav-link" href="../about/contact"><i class="fas fa-id-card-alt"></i> Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="../mindicator/mindicatormumbai">TimeTable</a></li>
+            <li class="nav-item"><a class="nav-link" href="../payment/fare">Fare</a></li>
+            <li class="nav-item"><a class="nav-link" href="../\">Logout</a></li>
+
+            </ul>
+    </div>
+</div>
+
+</nav>
+
+
+<div class="left-half">
+<%= image_tag "Ticb.png" %>
+</div>
+
+<!DOCTYPE html>
+<html >
+<head>
+
+<style>
+.left-half{
+  position: absolute;
+  left: 0px;
+}
+
+.right-half {
+  position: absolute;
+  right: -80px;
+  width: 50%;
+}
+
+</style>
+
+</head>
+
+<div class="right-half">
+<br>
+<h6><marquee direction="Left" height="20" width="330" bgcolor="coral">Payment For AC-Coach</marquee></h6>
+<%= form_for(:pmts, url:{controller:"payment",action:"status"}) do |t| %>
+
+<p>CARD NUMBER </P>
+        <%= text_field_tag 'CARD NUMBER', nil, :maxlength => 15, :size => 40 %>
+
+<br>
+<br>
+<br>
+
+<p>NAME </P>
+        <%= text_field_tag 'NAME', nil, :maxlength => 15, :size => 40 %>
+
+
+<br>
+<br>
+<br>
+
+<p>CVV </P>
+        <%= text_field_tag 'CVV', nil, :maxlength => 15, :size => 40 %>
+
+
+<br>
+<br>
+<br>
+
+<p><b>INR:200</b></P>
+<br>
+<div class="form-button">
+<button type="submit" class="btn btn-primary btn-md">PayNow</button>
+</div>
+
+
+<% end %>
+
+
+</div>
+</html>

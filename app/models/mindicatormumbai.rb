@@ -1,0 +1,4 @@
+class Mindicatormumbai < ApplicationRecord
+end
+
+

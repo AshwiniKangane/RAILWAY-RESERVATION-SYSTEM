@@ -1,0 +1,62 @@
+<html>
+<head>
+<body>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+body{
+background-image: url('/assets/fbg.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
+h1{
+color: red;
+}
+th,td {
+    border-bottom: 1px solid #ddd;
+  }
+  tr:nth-child(even)
+  {background-color: #f2f2f2;}
+
+
+</style>
+</head>
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.email %></td>
+        <td><%= user.address %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
+</body>
+</html>

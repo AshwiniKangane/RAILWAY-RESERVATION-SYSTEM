@@ -1,0 +1,54 @@
+<html>
+<head>
+<body>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+body{
+background-image: url('/assets/fbg.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+h1{
+color:red
+}
+div{
+    text-align: center;
+    }
+
+.container{
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+</style>
+</head>
+
+<div class="container">
+
+
+<p id='alert'><%= alert %></p>
+<h1>Login</h1>
+<%= form_tag sessions_path do |form| %>
+ <div class='field'>
+   <%= label_tag :email %>
+   <%= text_field_tag :email %>
+ </div>
+ <div class='field'>
+   <%= label_tag :password %>
+   <%= password_field_tag :password %>
+ </div>
+ <div class='actions'>
+   <%= submit_tag 'Login' %>
+ </div>
+<% end %>
+ <%= link_to "Log Out ", controller: "sessions", action: 'destroy' %>
+</div>
+</body>
+</html>

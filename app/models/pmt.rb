@@ -1,0 +1,2 @@
+class Pmt < ApplicationRecord
+end

@@ -1,0 +1,28 @@
+<html>
+<head>
+
+<style>
+body{
+background-image: url('/assets/image.png');
+background-size: cover;
+background-repeat: no-repeat;
+}
+</style>
+
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<% if current_user %>
+ Logged in as <%= current_user.email %>.
+ <%= link_to 'Log Out', logout_path %>
+<% else %>
+ <%= link_to 'Sign Up', signup_path %> or
+ <%= link_to 'Log In', login_path %>
+<% end %>
+<p id='notice'><%= notice %></p>
+</body>
+</html>
